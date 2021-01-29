@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Program 4-1</title>
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <h1>Week 4: Program 4-1</h1>
+      <h2>Tad Reid</h2>
+    </header>
+    <main>
+      <h3>Add Two Numbers</h3>
+      <label>Enter Number One: <input type="number" id="number1" /></label>
+      <label>Enter Number Two: <input type="number" id="number2" /></label>
+      <label><button onclick="addNumbers()">Add Numbers</button></label>
+      <hr />
+      <div id="output"></div>
+    </main>
+    <footer>&copy;2021 &bull; Tad Reid &bull; BYU-Idaho &bull; CIT 160</footer>
+  </body>
+  <script>
+    // Function - gather the two number inputs, add them together, & then display the sum
+    function addNumbers() {
+      // VARIABLES - number1 & number2.  Parsed to be an integer
+      let number1 = parseFloat(document.getElementById("number1").value);
+      let number2 = parseFloat(document.getElementById("number2").value);
+      // CALCULATION - additional of number1 & nubmer2
+      let output = number1 + number2;
+      // OUTPUT - sume of number1 & number2
+      document.getElementById("output").innerHTML = output;
+    }
+  </script>
+</html>
