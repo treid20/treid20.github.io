@@ -49,9 +49,9 @@
     */
         function computeFutureValue(principal,annualrate,years,periods) {
             let a = principal;
-            let r = annualrate / 12;
+            let r = annualrate / periods;
             let n = years * periods;
-            let f = a*(1+r)**n;
+            let f = a*Math.pow(1+r,n);
             return f;
         }    
     </script>
