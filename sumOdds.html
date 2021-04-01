@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>CIT 160 Template - Add Two Number</title>
+        <link href="css/style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header>
+            <h1>Week 8: Sum up the Odd Values</h1>
+            <h2>Tad Reid</h2>
+        </header>
+        <main>
+            <h3>Input Integer to Sum</h3>
+            <label>Enter a Number: <input type="number" min=0 step=1 id="number"></label>
+            <label><button onclick="sumOdds()">Sum All Odd Values</button></label>
+            <hr />
+            <div id="output"></div>
+        </main>
+        <footer>
+            &copy;2021 &bull; Tad Reid &bull; BYU-Idaho &bull; CIT 160
+        </footer>
+    </body>
+    <script>
+        // function that loops to find all odd values up to the number provided
+        function sumOdds() {
+            // variables used within the while loop
+            let number = document.getElementById("number").value;
+            let oddCheck = 0;
+            let oddSum = 0;
+            // while loop: if oddCheck <= number, then check if if oddCheck is odd.  If yes, += to oddSum.
+            while (oddCheck <= number) {
+                // new variable [check] which will determine if the [oddCheck] variable is odd by using "mod 2"
+                let check = oddCheck % 2
+                if (check != 0){
+                    oddSum += oddCheck;
+                } 
+                oddCheck++;
+            }
+            document.getElementById("output").innerHTML = "The sum of all odd values up to " + number + " is " + oddSum;
+        }
+    </script>
+</html>
