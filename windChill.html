@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>CIT 160 Template - Add Two Number</title>
+        <link href="css/style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header>
+            <h1>Week 10: Wind Chill</h1>
+            <h2>Tad Reid</h2>
+        </header>
+        <main>
+            <h3>Calculate Wind Chill</h3>
+            <label>Temperature (&#8457): <input type="number" id="temperature"></label>
+            <label>Wind Speed (mph): <input type="number" id="windSpeed"></label>
+            <label><button onclick="doInputOutput()">Wind Chill</button></label>
+            <hr />
+            <div id="output"></div>
+        </main>
+        <footer>
+            &copy;2021 &bull; Tad Reid &bull; BYU-Idaho &bull; CIT 160
+        </footer>
+    </body>
+    <script>
+        function doInputOutput() {
+            let tempF = document.getElementById("temperature").value;
+            let speed = document.getElementById("windSpeed").value;
+            if (tempF > 50 || speed < 3) {
+                document.getElementById("output").innerHTML = tempF+"&#8457";
+            } else {
+                let windchill = windChill(tempF, speed);
+                document.getElementById("output").innerHTML = windchill+"&#8457";
+            }
+        }
+        function windChill(tempF, speed) {
+            let f = 35.74 + (0.6215 * tempF) - (35.75* Math.pow(speed,0.16)) + (0.4275 * tempF * Math.pow(speed, 0.16))
+            return f.toFixed(0)
+        }
+    </script>
+</html>
