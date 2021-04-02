@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Week 9: Exam 2 - Part 2</title>
+        <link href="css/style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header>
+            <h1>Week 9: Exam 2 - Part 2 - Question 1</h1>
+            <h2>Tad Reid</h2>
+        </header>
+        <main>
+            <h3>Loop 2<sup>0</sup> through 2<sup>31</sup></h3>
+            <label><button onclick="powerLoop()">Calculate</button></label>
+            <hr />
+            <div id="output"></div>
+        </main>
+        <footer>
+            &copy;2021 &bull; Tad Reid &bull; BYU-Idaho &bull; CIT 160
+        </footer>
+    </body>
+    <script>
+        function powerLoop() {
+            let results = '';
+            for (let x = 0; x <= 31; x++) {
+                results += Math.pow(2,x) + ", ";
+                if (x == 31) {
+                    results += Math.pow(2,x);
+                }   
+            }
+            document.getElementById("output").innerHTML = results
+        }
+    </script>
+</html>
