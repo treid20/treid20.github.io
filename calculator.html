@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>CIT 160 Template - Calculator</title>
+        <link href="css/style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header>
+            <h1>Week 6: Calculator</h1>
+            <h2>Tad Reid</h2>
+        </header>
+        <main>
+            <h3>Calculator</h3>
+            <label>Enter Number One: <input type="number" id="number1"></label>
+            <select name="operators" id="operators">
+                <option value="">Operator</option>
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <label>Enter Number Two: <input type="number" id="number2"></label>
+            =
+            <label>Enter Enter Answer: <input type="number" id="answer"></label>
+            <label><button onclick="calculate()">Calculate</button></label>
+            <hr />
+            <div id="output"></div>
+        </main>
+        <footer>
+            &copy;2021 &bull; Tad Reid &bull; BYU-Idaho &bull; CIT 160
+        </footer>
+    </body>
+    <script>        
+        // function to calculate the values provided by the user.
+        function calculate() {
+            // pull in variables and parse float them
+            let num1 = parseFloat(document.getElementById("number1").value);
+            let num2 = parseFloat(document.getElementById("number2").value);
+            let operator = document.getElementById("operators").value;
+            let userAnswer = parseFloat(document.getElementById("answer").value);
+
+            switch (operator) {
+                case '+':
+                    correctAnswer = num1 + num2;
+                    break;
+                case '-':
+                    correctAnswer = num1 - num2;
+                    break;
+                case '/':
+                    correctAnswer = num1 / num2;
+                    break;
+                case '*':
+                    correctAnswer = num1 * num2;
+                    break;
+            }
+            if (userAnswer == correctAnswer) {
+                document.getElementById('output').innerHTML = "Correct! 🏆"
+            } else {
+                document.getElementById('output').innerHTML = "Incorrect! 😢"
+            }
+        }
+    </script>
+</html>
